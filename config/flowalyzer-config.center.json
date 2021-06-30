@@ -1,0 +1,172 @@
+{
+	"Parameters": {
+		"NoiseThreshold": 0.005,
+		"SmoothingDiskRadius": 3,
+		"SmoothingEnabled": 1,
+		"OpticalFlowRadius": 8
+	},
+	"Image": {
+		"width": 192,
+		"height": 192
+	},
+	"ROI": [
+		{
+			"name": "tile-1",
+			"type": "static",
+			"row": 1,
+			"col": 1,
+			"x": 1,
+			"y": 1,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-2",
+			"type": "static",
+			"row": 2,
+			"col": 1,
+			"x": 1,
+			"y": 65,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-3",
+			"type": "static",
+			"row": 3,
+			"col": 1,
+			"x": 1,
+			"y": 129,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-4",
+			"type": "static",
+			"row": 1,
+			"col": 2,
+			"x": 65,
+			"y": 1,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-5",
+			"type": "static",
+			"row": 2,
+			"col": 2,
+			"x": 65,
+			"y": 65,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-6",
+			"type": "static",
+			"row": 3,
+			"col": 2,
+			"x": 65,
+			"y": 129,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-7",
+			"type": "static",
+			"row": 1,
+			"col": 3,
+			"x": 129,
+			"y": 1,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-8",
+			"type": "static",
+			"row": 2,
+			"col": 3,
+			"x": 129,
+			"y": 65,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-9",
+			"type": "static",
+			"row": 3,
+			"col": 3,
+			"x": 129,
+			"y": 129,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		}
+	],
+	"OUTPUT": [
+		{
+			"name": "out-5-V",
+			"show": 1,
+			"index": 5,
+			"selectROI": "tile-5",
+			"fn": "sum"
+		} ],
+	"OpticalFlow": {
+		"default": {
+			"type": "LK",
+			"smooth": 1,
+			"filt": 0,
+			"minScale": 0.015625,
+			"maxScale": 1,
+			"radius": 10,
+			"nBlock": 5,
+			"alpha": 1,
+			"nIter": 250
+		},
+		"MatlabLK": {
+			"NoiseThreshold": 0.0005
+		}
+	},
+	"Display": {
+		"show": 1,
+		"scale_factor": 0.7
+	},
+	"image": {
+		"width": 192,
+		"height": 192
+	}
+}

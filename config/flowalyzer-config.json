@@ -1,0 +1,46 @@
+{ 
+
+	"Parameters" : { 	"NoiseThreshold"  : 0.005,
+						"SmoothingDiskRadius" : 3,
+						"SmoothingEnabled" : true,
+						"OpticalFlowRadius" : 8},
+
+	"Image" : {  	"width" : 192, "height" : 192 }, 
+
+
+	"ROI" : [ {  	"name" 	    : "tile-0",
+					"type" 	    : "static",
+                    "w" 	    : 96,
+					"h" 	    : 96,
+					"style" : { "color": "red", "linewidth" : 2 },
+					"fn" 	: "mean" }, 
+
+				{  	"name" 	: "control",
+					"type" 	: "static",
+					"x" 	: 64,
+					"y" 	: 1,
+					"w" 	: 96, 
+					"h" 	: 96,
+					"style" : { "color": "yellow", "linewidth" : 2 },
+					"fn" 	: "mean" } ],
+
+
+	"OUTPUT" : [ { "index" : 0, "name" : "out-1-Vx", "selectROI" : "tile-0", "fn" : "mean", "input" : "Vx" },
+				 { "index" : 1, "name" : "out-1-Vy", "selectROI" : "tile-0", "fn" : "mean", "input" : "Vy" } ],
+
+
+	"OpticalFlow" : { "default" : {  "type"      : "LK",     // type 
+									    "smooth"   : 1,        // smoothing radius 
+									    "filt"     : 0,        // [0]] median filtering radius for smoothing flow field
+									 	"minScale" : 0.015625, // [1/64] minimum pyramid scale (must be a power of 2)
+									    "maxScale" : 1,        // [1] maximum pyramid scale (must be a power of 2)
+									    "radius"   : 10,       // [10] integration radius for weighted window [LK/SD only]
+									    "nBlock"   : 5,        // [5] number of tested blocks [SD only]
+									    "alpha"    : 1,        // [1] smoothness constraint [HS only]
+									    "nIter"    : 250   },  // [250] number of iterations [HS only]
+					 
+		 				"MatlabLK" : { "NoiseThreshold" : 0.0005 }
+					}, 
+
+	"Display" : { "show" : true, "scale_factor" : 0.7 }
+}
