@@ -25,6 +25,8 @@
 					"fn" 	: "mean" } ],
 
 
+	// aggregated output
+
 	"OUTPUT" : [ { "index" : 0, "name" : "out-1-Vx", "selectROI" : "tile-0", "fn" : "mean", "input" : "Vx" },
 				 { "index" : 1, "name" : "out-1-Vy", "selectROI" : "tile-0", "fn" : "mean", "input" : "Vy" } ],
 
@@ -41,6 +43,16 @@
 					 
 		 				"MatlabLK" : { "NoiseThreshold" : 0.0005 }
 					}, 
+
+	// Filters 
+
+	"FILTERS" : [  	{ "Enabled" : true, "input": [ "CurrentTime", "Vx" ], "output": "isblink",  "function" : "vblinkdetect", "lower" : -2.5, "upper" : 2.5, "timeout" : 0.75 }, 
+					{ "Enabled" : true, "input":   "isblink", "output": "isblink",  "function" : "vthicken", "value" : 5 },
+					{ "Enabled" : true, "input":   [ "Vx", "isblink" ], "edges" : 3, "output": "Vx",  "function" : "vnan" },
+					{ "Enabled" : true, "input":   [ "Vy", "isblink" ], "edges" : 3, "output": "Vy",  "function" : "vnan" },
+					{ "Enabled" : true, "input":   [ "CurrentTime", "Vx" ], "output": "X",   "function" : "vcumtrapz" },
+					{ "Enabled" : true, "input":   [ "CurrentTime", "Vy" ], "output": "Y",   "function" : "vcumtrapz" } ],
+
 
 	"Display" : { "show" : true, "scale_factor" : 0.7 }
 }

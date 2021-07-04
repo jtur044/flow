@@ -15,11 +15,6 @@ res = p.Results;
 
 
 % (r,c) pair 
-
-if (ischar(dataTable))
-    dataTable = readtable (dataTable);
-end    
-    
 i = (dataTable.row == r) & (dataTable.col == c);    
 dataTable = dataTable(i, :);        
 t = dataTable.CurrentTime;
@@ -41,11 +36,11 @@ ylabel ('Displacement (px)');
 
 grid on;
 
-title ('Horizontal');
+title ('Vertical');
 
 
 
-h(2) = subplot(3,1,1);
+h(2) = subplot(2,1,1);
 
 yyaxis right;
 plot (t, Vy);
@@ -57,17 +52,7 @@ ylabel ('Displacement (px)');
 
 grid on;
 
-title ('Vertical');
-
-
-%% if the blink field is present 
-i = ismember('isblink', dataTable.Properties.VariableNames);
-if (i)
-    h(3) = subplot(3,1,3);
-    b = dataTable.isblink;
-    stem (t, b, 'r-');
-    ylim([-0.2, 1.2]);
-end
+title ('Horizontal');
 
 
 linkaxes(h);

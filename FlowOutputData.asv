@@ -46,8 +46,6 @@ classdef FlowOutputData < handle
            obj.Vx = 0;
            obj.Vy = 0;
            
-           obj.lastVx = 0;
-           obj.lastVy = 0;
             
         end
         
@@ -60,18 +58,10 @@ classdef FlowOutputData < handle
         end
         
         function update (obj, Vx, Vy, dT)
-
-            obj.lastVx = obj.Vx;
-            obj.lastVy = obj.Vy;            
-            
             obj.Vx = Vx;
-            obj.Vy = Vy;     
-           
-            %% Trapezoidal rule 
-            Vx1 = obj.lastVx;
-            Vy1 = obj.lastVy;                       
-            obj.X  = obj.X + 0.5*(Vx + Vx1)*dT;
-            obj.Y  = obj.Y + 0.5*(Vy + Vy1)*dT;            
+            obj.Vy = Vy;            
+            obj.X  = obj.X + Vx*dT;
+            obj.Y  = obj.Y + Vy*dT;            
         end
                 
         function [Vx, Vy] = get (obj)
