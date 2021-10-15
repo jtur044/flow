@@ -5,20 +5,26 @@
 %% Saaed
 %% !ffmpeg -y -i eye0.mp4 -filter:v fps=30 eye0.reduced.mp4
 
-inputVideo      = './data/Saaed/eye0.reduced.mp4';
-outputVideo     = './data/Saaed/clip0.result.mp4';
-outputDataFile  = './data/Saaed/clip0.result.csv';
+%inputVideo      = './data/Saaed/eye0.reduced.mp4';
+%outputVideo     = './data/Saaed/clip0.result.mp4';
+%outputDataFile  = './data/Saaed/clip0.result.csv';
+
+
+%% j_kau 
+inputVideo      = './data/j_kau/eye0.reduced.mp4';
+outputVideo     = './data/j_kau/clip0.result.mp4';
+outputDataFile  = './data/j_kau/clip0.result.csv';
 
 
 
 blinks = [ 0, 10 ];
 dataTable = readtable (outputDataFile);
 figure(1); clf;
-show_flowalyzer_result (dataTable, 2,2);
+show_flowalyzer_result (dataTable, 'tile-6');
 
 
 figure(2); clf;
-dataTable = filterbycolumn (dataTable, 'name', 'out-5-V');
+dataTable = filterbycolumn (dataTable, 'name', 'out-0-V');
 M = size (blinks, 1);
 for k = 1:M
     i = arrayfun( @(x) ((blinks(k,1) < x) && (x < blinks(k,2))), dataTable.CurrentTime);

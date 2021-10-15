@@ -1,0 +1,380 @@
+[
+    {
+        "start": {
+            "timestamp": {
+                "n": 0,
+                "pts": 0,
+                "pts_time": 0
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "animation",
+                "trial_index": "trial-1-1"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 74,
+                "pts": 74,
+                "pts_time": 2.46667
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "animation",
+                "trial_index": "0",
+                "time_elapsed": "3008"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 75,
+                "pts": 75,
+                "pts_time": 2.5
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "disks",
+                "trial_index": "disk-condition-1-1"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 194,
+                "pts": 194,
+                "pts_time": 6.46667
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "disks",
+                "trial_index": "1",
+                "time_elapsed": "11109"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 195,
+                "pts": 195,
+                "pts_time": 6.5
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "animation",
+                "trial_index": "trial-1-3"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 249,
+                "pts": 249,
+                "pts_time": 8.3
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "animation",
+                "trial_index": "2",
+                "time_elapsed": "14113"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 250,
+                "pts": 250,
+                "pts_time": 8.33333
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "disks",
+                "trial_index": "disk-condition-1-1"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 371,
+                "pts": 371,
+                "pts_time": 12.3667
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "disks",
+                "trial_index": "3",
+                "time_elapsed": "22179"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 372,
+                "pts": 372,
+                "pts_time": 12.4
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "animation",
+                "trial_index": "trial-1-5"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 420,
+                "pts": 420,
+                "pts_time": 14
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "animation",
+                "trial_index": "4",
+                "time_elapsed": "25184"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 421,
+                "pts": 421,
+                "pts_time": 14.0333
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "disks",
+                "trial_index": "disk-condition-1-1"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 537,
+                "pts": 537,
+                "pts_time": 17.9
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "disks",
+                "trial_index": "5",
+                "time_elapsed": "33232"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 539,
+                "pts": 539,
+                "pts_time": 17.9667
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "animation",
+                "trial_index": "trial-1-7"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 586,
+                "pts": 586,
+                "pts_time": 19.5333
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "animation",
+                "trial_index": "6",
+                "time_elapsed": "36237"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 587,
+                "pts": 587,
+                "pts_time": 19.5667
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "disks",
+                "trial_index": "disk-condition-1-1"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 709,
+                "pts": 709,
+                "pts_time": 23.6333
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "disks",
+                "trial_index": "7",
+                "time_elapsed": "44285"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 711,
+                "pts": 711,
+                "pts_time": 23.7
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "animation",
+                "trial_index": "trial-1-9"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 761,
+                "pts": 761,
+                "pts_time": 25.3667
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "animation",
+                "trial_index": "8",
+                "time_elapsed": "47289"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 762,
+                "pts": 762,
+                "pts_time": 25.4
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "disks",
+                "trial_index": "disk-condition-1-1"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 871,
+                "pts": 871,
+                "pts_time": 29.0333
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "disks",
+                "trial_index": "9",
+                "time_elapsed": "55343"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 872,
+                "pts": 872,
+                "pts_time": 29.0667
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "animation",
+                "trial_index": "trial-1-11"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 919,
+                "pts": 919,
+                "pts_time": 30.6333
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "animation",
+                "trial_index": "10",
+                "time_elapsed": "58347"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 921,
+                "pts": 921,
+                "pts_time": 30.7
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "disks",
+                "trial_index": "disk-condition-1-1"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 1042,
+                "pts": 1042,
+                "pts_time": 34.7333
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "disks",
+                "trial_index": "11",
+                "time_elapsed": "66392"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 1043,
+                "pts": 1043,
+                "pts_time": 34.7667
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "animation",
+                "trial_index": "trial-1-13"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 1090,
+                "pts": 1090,
+                "pts_time": 36.3333
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "animation",
+                "trial_index": "12",
+                "time_elapsed": "69400"
+            }
+        }
+    },
+    {
+        "start": {
+            "timestamp": {
+                "n": 1092,
+                "pts": 1092,
+                "pts_time": 36.4
+            },
+            "event": {
+                "type": "start_marker",
+                "trial_type": "disks",
+                "trial_index": "disk-condition-1-1"
+            }
+        },
+        "end": {
+            "timestamp": {
+                "n": 1206,
+                "pts": 1206,
+                "pts_time": 40.2
+            },
+            "event": {
+                "type": "end_marker",
+                "trial_type": "disks",
+                "trial_index": "13",
+                "time_elapsed": "77453"
+            }
+        }
+    }
+]

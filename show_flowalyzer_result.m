@@ -1,4 +1,4 @@
-function show_flowalyzer_result (dataTable, r, c, varargin)
+function show_flowalyzer_result (dataTable, name, varargin)
 
 % SHOW_FLOWALYZER_RESULT Show result of FLOWALYZER 
 %
@@ -20,40 +20,50 @@ if (ischar(dataTable))
     dataTable = readtable (dataTable);
 end    
     
-i = (dataTable.row == r) & (dataTable.col == c);    
+i = cellfun( @(x) strcmp (x, name),  dataTable.selectROI); % (dataTable.row == r) & (dataTable.col == c);    
 dataTable = dataTable(i, :);        
 t = dataTable.CurrentTime;
 
-Vx = dataTable.Vx;
+
+i = ismember('Vx_updated', dataTable.Properties.VariableNames);
+if (i)
+    Vx = dataTable.Vx_updated;
+    Vy = dataTable.Vy_updated;
+else
+    Vx = dataTable.Vx;
+    Vy = dataTable.Vy;    
+end
+
 X  = dataTable.X;
-Vy = dataTable.Vy;
 Y  = dataTable.Y;
 
-h(1) = subplot(3,1,2);
+h(1) = subplot(2,1,2);
 
 yyaxis right;
 plot (t, Vx);
 ylabel ('Velocity (px/s)');
-  
+ylim([-5 5]);  
+
 yyaxis left;
 plot (t, X);
 ylabel ('Displacement (px)');
+ylim([-0.4 0.4]);  
 
 grid on;
 
 title ('Horizontal');
-
-
 
 h(2) = subplot(3,1,1);
 
 yyaxis right;
 plot (t, Vy);
 ylabel ('Velocity (px/s)');
+ylim([-5 5]);  
 
 yyaxis left;
 plot (t, Y);
 ylabel ('Displacement (px)');
+ylim([-0.4 0.4]);  
 
 grid on;
 
@@ -64,9 +74,16 @@ title ('Vertical');
 i = ismember('isblink', dataTable.Properties.VariableNames);
 if (i)
     h(3) = subplot(3,1,3);
+    
+    yyaxis left;
     b = dataTable.isblink;
     stem (t, b, 'r-');
     ylim([-0.2, 1.2]);
+
+    yyaxis right;
+
+    
+    title ('Blink Detection');
 end
 
 

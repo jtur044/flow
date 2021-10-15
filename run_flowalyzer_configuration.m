@@ -8,8 +8,10 @@
 %
 
 
-
 configuration = load_configuration ('./config/flowalyzer-config.json');
+
+%savejson ([], configuration, './config/flowalyzer-config.tiled.json');
+%return
 
 %% add tiled-regions flowalyzer 
 
@@ -69,6 +71,7 @@ end
 
 
 %% GLOBAL TILE 
+
 x               = 1;
 y               = 1;     
 configuration.ROI(c).name            = 'global';
@@ -82,7 +85,6 @@ configuration.ROI(c).h               = height;
 configuration.ROI(c).style.color     = 'magenta';
 configuration.ROI(c).style.linewidth = 2;
 fprintf ('- %d. name=%s, (row,col)=(%d, %d), (x,y)=(%d,%d)\n', c, nm, k, j, x, y);
-
 
 savejson ([], configuration, './config/flowalyzer-config.tiled.json');
 

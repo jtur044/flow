@@ -60,6 +60,7 @@ classdef FlowOutput < handle
             
                 case { 'mean' }    
                     
+                    %N = sum((Vx ~= 0) | (Vy ~= 0), 'all');
                     Vx = mean2(Vx)/dT;
                     Vy = mean2(Vy)/dT;                    
                     obj.data.update(Vx, Vy, dT);                    
@@ -67,8 +68,8 @@ classdef FlowOutput < handle
                     
                 case { 'sum' }     
                     
-                    Vx = sum(Vx, 'all')/dT;
-                    Vy = sum(Vy, 'all')/dT;                    
+                    Vx = sum(Vx, 'all');
+                    Vy = sum(Vy, 'all');                    
                     obj.data.update(Vx, Vy, dT);                    
                     return
                     

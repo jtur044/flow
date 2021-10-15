@@ -153,6 +153,13 @@
 	],
 	"OUTPUT": [
 		{
+			"name": "out-0-V",
+			"show": 1,
+			"index": 0,
+			"selectROI": "global",
+			"fn": "mean"
+		},
+		{
 			"name": "out-1-V",
 			"show": 1,
 			"index": 1,
@@ -234,6 +241,15 @@
 	},
 
 
+
+	"FILTERS" : [  	{ "Enabled" : true, "input": [ "CurrentTime", "Vx" ], "output": "isblink",  "function" : "vblinkdetect", "lower" : -2.5, "upper" : 2.5, "timeout" : 0.75 }, 
+					{ "Enabled" : true, "input":   "isblink", "output": "isblink",  "function" : "vthicken", "value" : 5 },
+					{ "Enabled" : true, "input":   [ "Vx", "isblink" ], "edges" : 3, "output": "Vx_updated",  "function" : "vnan" },
+					{ "Enabled" : true, "input":   [ "Vy", "isblink" ], "edges" : 3, "output": "Vy_updated",  "function" : "vnan" },
+					{ "Enabled" : true, "input":   [ "CurrentTime", "Vx_updated" ], "output": "X",   "function" : "vcumtrapz" },
+					{ "Enabled" : true, "input":   [ "CurrentTime", "Vy_updated" ], "output": "Y",   "function" : "vcumtrapz" } ],
+
+
 	"Display": {
 		"show": 1,
 		"scale_factor": 0.7
@@ -242,6 +258,6 @@
 	"image": {
 		"width": 192,
 		"height": 192
-	},
+	}
 
 }
