@@ -48,17 +48,19 @@ end
 X  = dataTable.X;
 Y  = dataTable.Y;
 
-h(1) = subplot(2,1,2);
-
-yyaxis right;
-plot (t, Vx);
-ylabel ('Velocity (px/s)');
-ylim([-5 5]);  
+h(1) = subplot(3,1,2);
 
 yyaxis left;
 plot (t, X);
 ylabel ('Displacement (px)');
 ylim([-0.4 0.4]);  
+
+
+yyaxis right;
+plot (t, Vx);
+ylabel ('Velocity (px/s)');
+ylim([-10 10]);  
+
 
 grid on;
 
@@ -66,15 +68,17 @@ title ('Horizontal');
 
 h(2) = subplot(3,1,1);
 
+yyaxis left;
+plot (t, Y);
+ylabel ('Displacement (px)');
+ylim([-0.4 0.4]);  
+
+
 yyaxis right;
 plot (t, Vy);
 ylabel ('Velocity (px/s)');
 ylim([-5 5]);  
 
-yyaxis left;
-plot (t, Y);
-ylabel ('Displacement (px)');
-ylim([-0.4 0.4]);  
 
 grid on;
 

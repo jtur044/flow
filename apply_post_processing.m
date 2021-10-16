@@ -1,8 +1,8 @@
-function dataTable = apply_post_processing (config, inputfile, outputfile) 
+function dataTable = apply_post_processing (configfile, inputfile, outputfile) 
 
 % APPLY_POST_PROCESSING Apply post-processing to the named file
 %
-%   apply_post_processing (inputfile) 
+%   dataTable = apply_post_processing (configfile, inputfile, outputfile) 
 %
 % where 
 %       inputfile is the inputfilename 
@@ -21,10 +21,13 @@ dataTable = readtable (inputfile);
 outputs   = unique(dataTable.name);
 N = length (outputs);
 
-if  (ischar (config))
-    fprintf ('load configuration ... %s\n', inputfile);
-    config = load_configuration (config);
+if  (ischar (configfile))
+    fprintf ('load configuration ... %s\n', configfile);
+    config = load_configuration (configfile);
+else
+    config = configfile;
 end
+
 
 count = 1;
 M = length(config.FILTERS);
@@ -78,6 +81,15 @@ function y = dispatch_function  (this_filter, y)
             y.(this_filter.output) = vblinkdetect (t, f, lower, upper, timeout);
             fprintf ('OK\n');
             
+        case { 'detectblinkv' } 
+
+            t = y.(this_filter.input{1});
+            f = y.(this_filter.input{2});
+            fps = this_filter
+            
+            [t, V, maxtab] = detectblinkv (t, f, fps, varargin)
+
+            
         case { 'vthicken' }
 
             f = y.(this_filter.input);
@@ -101,7 +113,15 @@ function y = dispatch_function  (this_filter, y)
             g = vcumtrapz (t, f);
             y.(this_filter.output) = g;
             fprintf ('OK\n');
-            
+
+        case { 'medianFilter' }
+
+            f = y.(this_filter.input{1});
+            n = this_filter.npoints;
+            g = medfilt1 (f, n, 'includenan');
+            y.(this_filter.output) = g;
+            fprintf ('OK\n');
+                        
             
         case { 'tidy' }
 
