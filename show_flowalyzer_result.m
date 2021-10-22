@@ -45,8 +45,15 @@ else
     Vy = dataTable.Vy;    
 end
 
-X  = dataTable.X;
-Y  = dataTable.Y;
+
+i = ismember('X_updated', dataTable.Properties.VariableNames);
+if (i)
+    X = dataTable.X_updated;
+    Y = dataTable.Y_updated;
+else
+    X = dataTable.X;
+    Y = dataTable.Y;    
+end
 
 h(1) = subplot(3,1,2);
 

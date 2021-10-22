@@ -17,12 +17,12 @@ function dataTable = load_flowalyzer_result (filename, name, varargin)
 %   % following ... 
 %
 %   % Example 1
-%   % tile-6 is 6th tile of a 3x3 grid (row = 3, col =2)
-%   filename = './data/j_kau_3/clip0.result.csv';
-%   dataTable = load_flowalyzer_result (filename, 'tile-6');
+%   % tile-5 is 6th tile of a 3x3 grid (row = 2, col =2)
+%   filename = './data/Saaed/clip0.result.csv';
+%   dataTable = load_flowalyzer_result (filename, 'tile-5');
 %
 %   % Example 2
-%   filename = './data/j_kau_3/clip0.result.csv';
+%   filename = './data/Saaed/clip0.result.csv';
 %   dataTable = load_flowalyzer_result (filename);
 %
 

@@ -246,8 +246,10 @@
                     { "Enabled" : true, "input":   "isblink", "output": "isblink",  "function" : "vthicken", "value" : 5 },
 					{ "Enabled" : true, "input":   [ "Vx", "isblink" ], "edges" : 3, "output": "Vx_updated",  "function" : "vnan" },
 					{ "Enabled" : true, "input":   [ "Vy", "isblink" ], "edges" : 3, "output": "Vy_updated",  "function" : "vnan" },
-					{ "Enabled" : true, "input":   [ "CurrentTime", "Vx_updated" ], "output": "X",   "function" : "vcumtrapz" },
-					{ "Enabled" : true, "input":   [ "CurrentTime", "Vy_updated" ], "output": "Y",   "function" : "vcumtrapz" } ],
+                    { "Enabled" : true, "input":   [ "CurrentTime", "Vx" ], "output": "X",   "function" : "vcumtrapz" },
+                    { "Enabled" : true, "input":   [ "CurrentTime", "Vy" ], "output": "Y",   "function" : "vcumtrapz" },
+                    { "Enabled" : true, "input":   [ "CurrentTime", "Vx_updated" ], "output": "X_updated",   "function" : "vcumtrapz" },
+					{ "Enabled" : true, "input":   [ "CurrentTime", "Vy_updated" ], "output": "Y_updated",   "function" : "vcumtrapz" } ],
 
 
 	"Display": {

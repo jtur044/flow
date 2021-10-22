@@ -5,6 +5,9 @@
 % The reduced file are reduced FRAME-RATE Files 
 %
 % !ffmpeg -y -i eye0.mp4 -filter:v fps=30 eye0.reduced.mp4
+%
+% Only do ONCE!
+
 
 %% Saaed 
 inputVideo      = './data/Saaed/eye0.reduced.mp4';
