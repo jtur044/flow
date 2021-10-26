@@ -40,7 +40,7 @@ EndTime   = 100;
 
 %% run analysis 
 configuration = load_configuration('./config/flowalyzer-config.tiled.json');
-run_flowalyzer(inputVideo, outputVideo, outputDataFile, configuration, 'UseProfile', 'MatlabLK', 'StartTime', StartTime, 'EndTime', EndTime);
+run_flowalyzer(inputVideo, outputVideo, outputDataFile, configuration, 'StartTime', StartTime, 'EndTime', EndTime);
 
 %% show analysis 
 dataTable = readtable (outputDataFile);

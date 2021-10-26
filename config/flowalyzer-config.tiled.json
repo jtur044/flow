@@ -224,7 +224,11 @@
 		}
 	],
 	"OpticalFlow": {
-		"default": {
+		"default": {			
+			"NoiseThreshold": 0.0005
+		},
+
+		"Other" : {
 			"type": "LK",
 			"smooth": 1,
 			"filt": 0,
@@ -235,6 +239,7 @@
 			"alpha": 1,
 			"nIter": 250
 		},
+
 		"MatlabLK": {
 			"NoiseThreshold": 0.0005
 		}

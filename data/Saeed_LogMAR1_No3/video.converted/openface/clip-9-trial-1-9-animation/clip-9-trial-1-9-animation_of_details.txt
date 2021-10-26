@@ -1,0 +1,13 @@
+Input:/Volumes/BLUR/DATA/INTERNAL/FRONT_CAMERA/Saeed/Log1/Saeed_LogMAR1_No3/video.converted/clips/clip-9-trial-1-9-animation.mp4
+Input full path:/Volumes/BLUR/DATA/INTERNAL/FRONT_CAMERA/Saeed/Log1/Saeed_LogMAR1_No3/video.converted/clips/clip-9-trial-1-9-animation.mp4
+Camera parameters:625,625,400,300
+Output HOG:clip-9-trial-1-9-animation.hog
+Output video:clip-9-trial-1-9-animation.avi
+Output aligned directory:clip-9-trial-1-9-animation_aligned
+Output csv:clip-9-trial-1-9-animation.csv
+Gaze: 1
+AUs: 1
+Landmarks 2D: 1
+Landmarks 3D: 1
+Pose: 1
+Shape parameters: 1

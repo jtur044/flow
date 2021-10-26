@@ -4,7 +4,14 @@ function varargout = run_flowalyzer(inputVideo, outputVideo, outputDataFile, con
 %
 % RUN_FLOWALYZER Perform flow analysis on ROI 
 %
-% run_flowalyzer (inputVideo, config)
+% run_flowalyzer(inputVideo, outputVideo, outputDataFile, config, varargin)
+%
+% where 
+%       inputVideo     is the input video 
+%       outputVideo    is the input video 
+%       outputDataFile is the output datafile
+%       config         is the configuration file 
+%       
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
