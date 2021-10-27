@@ -10,14 +10,22 @@
 
 
 %% MN_Threshold1_10times_LogMAR-02_08intensity075
-inputDataFile   = './data/MN_Threshold1_10times_LogMAR-02_08intensity075/right_video/flowdata.csv';
-bestTile        = 'tile-5';
+inputDataFile   = './data/MN_Threshold1_10times_LogMAR-02_08intensity075/right_video/flowdata.updated.csv';
+bestTile        = 'global';
 
 %% show analysis 
 dataTable = readtable (inputDataFile);
 
 figure(1); clf;
 show_flowalyzer_result (dataTable, bestTile);
+subplot(3,1,1);
+yyaxis left;
+ylim([-0.2 0.2]);
+%savefig(gcf);
+
+yyaxis right;
+ylim([-12 12]);
+
 
 %figure(2); clf;
 %show_flowalyzer_result (dataTable, 2,2, 'Component', 'Vx');

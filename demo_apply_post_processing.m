@@ -42,7 +42,4 @@ apply_post_processing (configfile, inputDataFile, outputDataFile);
 
 figure(1); clf;
 show_flowalyzer_result (outputDataFile, bestTile);
-subplot(3,1,1);
-yyaxis left;
-ylim([-0.2 0.2]);
-%savefig(gcf);
+
