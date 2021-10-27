@@ -65,7 +65,7 @@ classdef FlowRegion < handle
                 return
             end   
             
-            fprintf ('Generating sub-region.\n');
+            %fprintf ('Generating sub-region.\n');
             
             
             %% create a sub-region of the main FlowData            

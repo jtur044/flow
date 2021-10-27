@@ -27,12 +27,15 @@ res = p.Results;
 varargout{1} = [];
 
 
+if (ischar(config))
+    config = load_commented_json (config);
+end
+
+
+%% Information 
+
 vidObj = VideoReader(inputVideo);
-
 flowalyzer_config = getfield(config.OpticalFlow, res.UseProfile);
-
-% flowalyzer_config
-
 myFlowAlyzer = FlowAlyzer(flowalyzer_config); 
 
 %% register individual REGIONS for "flowalyzer"
@@ -69,6 +72,9 @@ se = fspecial('disk', config.Parameters.SmoothingDiskRadius);
 open (myFlowAlyzer, outputDataFile);
    
 
+clear textprogressbar;
+textprogressbar('outputs: ');
+
 vidObj.CurrentTime = res.StartTime;
 
 %% looping 
@@ -99,12 +105,16 @@ while(hasFrame(vidObj) & (vidObj.CurrentTime < res.EndTime))
         reducedFrame = imresize(annotatedIm, config.Display.scale_factor);
         step(myPlayer, reducedFrame);
     end
-        
     
     LastTime = CurrentTime; % = vidObj.CurrentTime;
+    
+    progress = round((vidObj.CurrentTime)/(res.EndTime - res.StartTime)*100);
+    textprogressbar(progress);
+    
 end
 
-%close (myFlowAlyzer);
+textprogressbar(100);
+textprogressbar('done');
 
 end
 

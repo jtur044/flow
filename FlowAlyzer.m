@@ -90,7 +90,7 @@ classdef FlowAlyzer < FlowEstimator & handle
                 %ret = getFD(obj.Output(eachOutput));
             end
             
-            fprintf ('Updated complete.\n');
+            %fprintf ('Updated complete.\n');
                 
             
         end
