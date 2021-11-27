@@ -23,7 +23,7 @@ outputDataFile  = './data/j_kau/clip0.result.csv';
 %% blink duration 
 
 blink_duration  = 0.5;
-
+fps = 30;
 
 blinks = [ 0, 100 ];
 dataTable = readtable (outputDataFile);

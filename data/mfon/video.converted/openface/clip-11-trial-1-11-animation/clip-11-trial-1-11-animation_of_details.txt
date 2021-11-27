@@ -1,0 +1,13 @@
+Input:/Volumes/BLUR/DATA/ARANGA/VIDEO/DAY1/mfon/video.converted/clips/clip-11-trial-1-11-animation.mp4
+Input full path:/Volumes/BLUR/DATA/ARANGA/VIDEO/DAY1/mfon/video.converted/clips/clip-11-trial-1-11-animation.mp4
+Camera parameters:1033.33,1033.33,640,512
+Output HOG:clip-11-trial-1-11-animation.hog
+Output video:clip-11-trial-1-11-animation.avi
+Output aligned directory:clip-11-trial-1-11-animation_aligned
+Output csv:clip-11-trial-1-11-animation.csv
+Gaze: 1
+AUs: 1
+Landmarks 2D: 1
+Landmarks 3D: 1
+Pose: 1
+Shape parameters: 1

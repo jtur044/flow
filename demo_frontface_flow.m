@@ -1,3 +1,8 @@
+% DEMO_FRONTFACE_FLOWALYZER Demo the fornt face flow-alyzer
+%
+% This demo runs the flowalyzer on front-face eye camera videos
+%
+%
 
 
 %% define output files 

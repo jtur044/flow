@@ -24,6 +24,8 @@ classdef FlowAlyzer < FlowEstimator & handle
         % currIm = [];
         % lastIm = [];
         
+        postFn;
+        
         fid;
     end
     
@@ -32,6 +34,7 @@ classdef FlowAlyzer < FlowEstimator & handle
        function obj = FlowAlyzer(config)
             
            
+            %% Main FlowEstimator
             obj@FlowEstimator(config)
            
             %% obj.opticFlow = opticalFlowLK('NoiseThreshold',0.009);
@@ -73,25 +76,40 @@ classdef FlowAlyzer < FlowEstimator & handle
             step@FlowEstimator (obj, Im);            
             annotatedIm = Im;
             
-            %% Determine SUBREGION information         
+            %% Generate updated information (FlowRegion)         
             M = length(obj.keys);
             for k = 1:M                 
+               
                eachRegion = obj.keys{k};
-               update(obj.Region(eachRegion));                 
+               update(obj.Region(eachRegion));                
+
+               
+                %% Information 
+               if (~isempty(obj.postFn))              
+                   obj.postFn (obj.Region(eachRegion));
+               end
+
             end
             
-            %% Estimate OUTPUT information                    
+            %% Estimate OUTPUT information  (FlowOutput)                  
             OutputKeys = obj.Output.keys ();
             M = length(OutputKeys);            
             for k = 1:M 
+                
                 eachOutput = OutputKeys{k};
                 allRegions = obj.Region;
                 update(obj.Output(eachOutput), allRegions, CurrentTime);                  
-                %ret = getFD(obj.Output(eachOutput));
+
+    
+                %% Information 
+                if (~isempty(obj.postFn))
+                    obj.postFn (obj.Output(eachOutput));
+                end
+                
+                %ret = getFD(obj.Output(eachOutput));                
             end
             
-            %fprintf ('Updated complete.\n');
-                
+            % fprintf ('Updated complete.\n');
             
         end
         
@@ -129,33 +147,32 @@ classdef FlowAlyzer < FlowEstimator & handle
             M = length(OutputKeys);            
             for k = 1:M 
      
-                                        
-            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            %
-            % RECORDS : 
-            %
-            % timestamp 
-            % index  
-            % name 
-            % Vx
-            % Vy
-            %
-            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-            
-            
-            %% Get the Output 
-            eachOutput = obj.Output (OutputKeys{k});
-            eachRecord = eachOutput.get();
-            eachRegion = obj.Region(eachRecord.selectROI);
-            eachRecord.row = eachRegion.row;
-            eachRecord.col = eachRegion.col;
+                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                %
+                % RECORDS : 
+                %
+                % timestamp 
+                % index  
+                % name 
+                % Vx
+                % Vy
+                %
+                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-            eachRecord = struct2table (eachRecord);
-            
-            %eachRecord
-            %obj.outputDataFile
-            
-            writetable (eachRecord, obj.outputDataFile, 'WriteMode', 'append');
+
+                %% Get the Output 
+                eachOutput      = obj.Output (OutputKeys{k});
+                eachRecord      = eachOutput.get();
+                eachRegion      = obj.Region(eachRecord.selectROI);
+                eachRecord.row  = eachRegion.row;
+                eachRecord.col  = eachRegion.col;
+
+                eachRecord = struct2table (eachRecord);
+
+                %eachRecord
+                %obj.outputDataFile
+
+                writetable (eachRecord, obj.outputDataFile, 'WriteMode', 'append');
 
             end
 

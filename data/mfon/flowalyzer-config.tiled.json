@@ -1,0 +1,273 @@
+{
+	"Parameters": {
+		"NoiseThreshold": 0.005,
+		"SmoothingDiskRadius": 3,
+		"SmoothingEnabled": 1,
+		"OpticalFlowRadius": 8
+	},
+	"Image": {
+		"width": 192,
+		"height": 192
+	},
+
+    
+    "Regionizer" : { "Enable" : true   },
+    
+    
+	"ROI": [
+		{
+			"name": "tile-1",
+			"type": "static",
+			"row": 1,
+			"col": 1,
+			"x": 1,
+			"y": 1,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-2",
+			"type": "static",
+			"row": 2,
+			"col": 1,
+			"x": 1,
+			"y": 65,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-3",
+			"type": "static",
+			"row": 3,
+			"col": 1,
+			"x": 1,
+			"y": 129,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-4",
+			"type": "static",
+			"row": 1,
+			"col": 2,
+			"x": 65,
+			"y": 1,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-5",
+			"type": "static",
+			"row": 2,
+			"col": 2,
+			"x": 65,
+			"y": 65,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-6",
+			"type": "static",
+			"row": 3,
+			"col": 2,
+			"x": 65,
+			"y": 129,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-7",
+			"type": "static",
+			"row": 1,
+			"col": 3,
+			"x": 129,
+			"y": 1,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-8",
+			"type": "static",
+			"row": 2,
+			"col": 3,
+			"x": 129,
+			"y": 65,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "tile-9",
+			"type": "static",
+			"row": 3,
+			"col": 3,
+			"x": 129,
+			"y": 129,
+			"w": 64,
+			"h": 64,
+			"style": {
+				"color": "red",
+				"linewidth": 2
+			}
+		},
+		{
+			"name": "global",
+			"type": "static",
+			"row": 0,
+			"col": 0,
+			"x": 1,
+			"y": 1,
+			"w": 192,
+			"h": 192,
+			"style": {
+				"color": "magenta",
+				"linewidth": 2
+			}
+		}
+	],
+	"OUTPUT": [
+		{
+			"name": "out-0-V",
+			"show": 1,
+			"index": 0,
+			"selectROI": "global",
+			"fn": "mean"
+		},
+		{
+			"name": "out-1-V",
+			"show": 1,
+			"index": 1,
+			"selectROI": "tile-1",
+			"fn": "mean"
+		},
+		{
+			"name": "out-2-V",
+			"show": 1,
+			"index": 2,
+			"selectROI": "tile-2",
+			"fn": "mean"
+		},
+		{
+			"name": "out-3-V",
+			"show": 1,
+			"index": 3,
+			"selectROI": "tile-3",
+			"fn": "mean"
+		},
+		{
+			"name": "out-4-V",
+			"show": 1,
+			"index": 4,
+			"selectROI": "tile-4",
+			"fn": "mean"
+		},
+		{
+			"name": "out-5-V",
+			"show": 1,
+			"index": 5,
+			"selectROI": "tile-5",
+			"fn": "mean"
+		},
+		{
+			"name": "out-6-V",
+			"show": 1,
+			"index": 6,
+			"selectROI": "tile-6",
+			"fn": "mean"
+		},
+		{
+			"name": "out-7-V",
+			"show": 1,
+			"index": 7,
+			"selectROI": "tile-7",
+			"fn": "mean"
+		},
+		{
+			"name": "out-8-V",
+			"show": 1,
+			"index": 8,
+			"selectROI": "tile-8",
+			"fn": "mean"
+		},
+		{
+			"name": "out-9-V",
+			"show": 1,
+			"index": 9,
+			"selectROI": "tile-9",
+			"fn": "mean"
+		}
+	],
+	"OpticalFlow": {
+		"default": {			
+			"NoiseThreshold": 0.0005
+		},
+
+		"Other" : {
+			"type": "LK",
+			"smooth": 1,
+			"filt": 0,
+			"minScale": 0.015625,
+			"maxScale": 1,
+			"radius": 10,
+			"nBlock": 5,
+			"alpha": 1,
+			"nIter": 250
+		},
+
+		"MatlabLK": {
+			"NoiseThreshold": 0.0005
+		}
+	},
+
+
+
+	"FILTERS" : [  	{ "Enabled" : true, "input": [ "CurrentTime", "Vx" ], "output": "isblink",  "function" : "vblinkdetect", "lower" : -2.5, "upper" : 2.5, "timeout" : 0.75 }, 
+                    { "Enabled" : true, "input":   "isblink", "output": "isblink",  "function" : "vthicken", "value" : 5 },
+					{ "Enabled" : true, "input":   [ "Vx", "isblink" ], "edges" : 3, "output": "Vx_updated",  "function" : "vnan" },
+					{ "Enabled" : true, "input":   [ "Vy", "isblink" ], "edges" : 3, "output": "Vy_updated",  "function" : "vnan" },
+					{ "Enabled" : true, "input":   [ "CurrentTime", "Vx_updated" ], "output": "X",   "function" : "vcumtrapz" },
+					{ "Enabled" : true, "input":   [ "CurrentTime", "Vy_updated" ], "output": "Y",   "function" : "vcumtrapz" } ],
+
+
+	"Display": {
+		"show": 1,
+		"scale_factor": 0.7
+	},
+
+	"image": {
+		"width": 192,
+		"height": 192
+	}
+
+}

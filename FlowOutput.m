@@ -2,7 +2,7 @@ classdef FlowOutput < handle
 
     properties 
     
-            %% region information 
+            %% Region information 
             config;
             index; 
             name;                
@@ -10,9 +10,12 @@ classdef FlowOutput < handle
             x;
             y;
             
+            %% 
+            active = true;
             CurrentTime = 0;
             LastTime = 0;
             data;
+            
     end
      
     methods 
@@ -22,10 +25,12 @@ classdef FlowOutput < handle
                 obj.index   = index;
                 obj.config  = config;
                 obj.data    = FlowOutputData ();
+                obj.active  = true;
         end
                 
         function s = get (obj)
             
+            %% get the data members            
             s = struct( 'CurrentTime',  obj.CurrentTime, ... 
                         'index',        obj.config.index, ...             
                         'name',         obj.config.name, ... 
@@ -33,7 +38,8 @@ classdef FlowOutput < handle
                         'Vx', obj.data.Vx, ...
                         'Vy', obj.data.Vy, ... 
                         'X',  obj.data.X, ... 
-                        'Y',  obj.data.Y);
+                        'Y',  obj.data.Y, ... 
+                        'active', obj.active);
         end
         
         function update(obj, regions, CurrentTime)
@@ -48,7 +54,8 @@ classdef FlowOutput < handle
             of = get(region_data);              
 
             if (isempty(of))
-                fprintf ('"%s" Region not ready.\n', obj.config.name);
+                %fprintf ('"%s" Region not ready.\n', obj.config.name);
+                rlog('debug',[],'"%s" Region not ready.\n',obj.config.name);
                 return
             end
             

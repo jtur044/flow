@@ -17,6 +17,7 @@ classdef FlowRegion < handle
             y;
             w;
             h;
+            rect;
             style;
             
             row;
@@ -24,6 +25,8 @@ classdef FlowRegion < handle
 
             data;  
             master;
+            
+            active = true;
 
     end
      
@@ -42,16 +45,32 @@ classdef FlowRegion < handle
                 obj.h            = config.h;
                 obj.row          = config.row;
                 obj.col          = config.col;
-                
+                obj.rect         = [ obj.x, obj.y, obj.w, obj.h ];
+     
+                                
                 obj.style        = namedargs2cell(config.style);                
                 obj.master       = flow;
                 
                 update (obj);
         end
         
-        %function setMaster (obj, flow)                        
+        function r = isPointInside (obj, pts)
+                        
+             % Region box    
+             x = pts(:,1);
+             y = pts(:,2);             
+             ispoints = isPointInRect (obj.rect, x, y);                 
+             r = any(ispoints);             
+        end
+        
+        
+        function obj = setActive (obj, value)        
+            obj.active = value;            
+        end    
+            
+        % function setMaster (obj, flow)                        
         %        obj.master = flow;                
-        %end
+        % end
 
         function r = get (obj)                        
                 r = obj.data;                
@@ -61,7 +80,7 @@ classdef FlowRegion < handle
         function update(obj)
                     
             if (isempty(obj.master))
-                fprintf ('"%s" master is EMPTY\n', obj.config.name);
+                rlog('debug',[],'"%s" master is EMPTY\n', obj.config.name);
                 return
             end   
             
@@ -81,7 +100,9 @@ classdef FlowRegion < handle
             
             % create a sub-matrix
             Vx0 = Vx(r1:r2, c1:c2);
-            Vy0 = Vy(r1:r2, c1:c2);            
+            Vy0 = Vy(r1:r2, c1:c2);
+            
+            %% creates a structure of type "opticalFlow"
             obj.data = opticalFlow(Vx0,Vy0);
                         
         end
