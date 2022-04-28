@@ -1,0 +1,13 @@
+Input:/Volumes/BLUR/DATA/ARANGA/VIDEO/DAY1/tneu/video.converted/clips/clip-4-disk-condition-4-2-disks.mp4
+Input full path:/Volumes/BLUR/DATA/ARANGA/VIDEO/DAY1/tneu/video.converted/clips/clip-4-disk-condition-4-2-disks.mp4
+Camera parameters:690.625,690.625,416,351
+Output HOG:clip-4-disk-condition-4-2-disks.hog
+Output video:clip-4-disk-condition-4-2-disks.avi
+Output aligned directory:clip-4-disk-condition-4-2-disks_aligned
+Output csv:clip-4-disk-condition-4-2-disks.csv
+Gaze: 1
+AUs: 1
+Landmarks 2D: 1
+Landmarks 3D: 1
+Pose: 1
+Shape parameters: 1

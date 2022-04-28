@@ -34,9 +34,14 @@ if (ischar(config))
 end
 
 
-%% Information 
-
+%% Open video & set the maximum time
 vidObj = VideoReader(inputVideo);
+if (~isfinite(res.EndTime))
+   res.EndTime = vidObj.Duration;    
+end
+
+
+
 flowalyzer_config = getfield(config.OpticalFlow, res.UseProfile);
 myFlowAlyzer = FlowAlyzer(flowalyzer_config); 
 
@@ -103,7 +108,8 @@ if (~isempty(res.OpenFaceInfo))
         FaceInfo.find (0.0);                                        %% only add these  
     
         
-        myFlowAlyzer.postFn = @(x) determine_activity (x, res.OpenFaceInfo, FaceInfo);
+        %% This function will execute before updating the region
+        myFlowAlyzer.preFn = @(x) determine_activity (x, res.OpenFaceInfo, FaceInfo);
         
         
     end    
@@ -197,13 +203,23 @@ function p = getfield (config, fieldstr)
 end
 
 
-function determine_activity (myFlowAlyzer, FaceInfo, OpenFaceInfo)
+function r = determine_activity (myFlowRegion, FaceInfo, OpenFaceInfo)
 
-% myFlowAlyzer
-% FaceInfo
-% res.OpenFaceInfo
+% myFlowRegion          the currently active region
+% FaceInfo              the masked points 
+% OpenFaceController    the OF controller 
 
+test_pts = bbox2points(myFlowRegion.rect);
+poly1 = polyshape (test_pts(:,1), test_pts(:,2));
 
+regions = FaceInfo.RegionList;
+for k = 1:length(regions)    
+    xy = OpenFaceInfo.getFPxy(regions{k});    
+    poly2 = polyshape(xy(:,1), xy(:,2));
+    t(k) = overlaps (poly1, poly2);    
+end
+
+r = any(t);
 
 end
 

@@ -1,0 +1,327 @@
+2021-10-31 14:14:03,128 INFO  - Init DETECTOR ... blink_detector (detectBlinkWithOpenFace)
+2021-10-31 14:14:03,129 INFO  - Init DETECTOR ... nose_tip_detector (detectNoseTipWithOpenFace)
+2021-10-31 14:14:03,130 INFO  - Init DETECTOR ... eye_region_detector_os (detectEyeRegionWithOpenFace)
+2021-10-31 14:14:03,130 INFO  - Init DETECTOR ... eye_region_detector_od (detectEyeRegionWithOpenFace)
+2021-10-31 14:14:03,131 INFO  - Init DETECTOR ... eye_pupil_detector_os (detectDarkPupilWithOpenFace)
+2021-10-31 14:14:03,132 INFO  - Init DETECTOR ... eye_pupil_detector_od (detectDarkPupilWithOpenFace)
+2021-10-31 14:14:03,133 INFO  - Init DETECTOR ... eye_corner_os_inner (detectEyeCornerWithOpenFace)
+2021-10-31 14:14:03,134 INFO  - Init DETECTOR ... eye_corner_od_outer (detectEyeCornerWithOpenFace)
+2021-10-31 14:14:03,135 INFO  - Init DETECTOR ... nose_point_1 (detectLandmarkWithOpenFace)
+2021-10-31 14:14:03,136 INFO  - Init DETECTOR ... nose_point_2 (detectLandmarkWithOpenFace)
+2021-10-31 14:14:03,137 INFO  - Init DETECTOR ... nose_point_3 (detectLandmarkWithOpenFace)
+2021-10-31 14:14:03,138 INFO  - Init TRACKER ... NoseTipTracker (3) with detector "nose_tip_detector".
+2021-10-31 14:14:03,139 INFO  - Init TRACKER ... EyeCornerTracker (6) with detector "eye_corner_os_inner".
+2021-10-31 14:14:03,140 INFO  - Init TRACKER ... EyeCornerTracker (7) with detector "eye_corner_od_outer".
+2021-10-31 14:14:03,141 INFO  - Init TRACKER ... EyePupilTracker (4) with detector "eye_pupil_detector_os".
+2021-10-31 14:14:03,142 INFO  - Init TRACKER ... EyePupilTracker (5) with detector "eye_pupil_detector_od".
+2021-10-31 14:14:03,143 INFO  - Init TRACKER ... SinglePointTracker (8) with detector "nose_point_1".
+2021-10-31 14:14:03,144 INFO  - Init TRACKER ... SinglePointTracker (9) with detector "nose_point_2".
+2021-10-31 14:14:03,144 INFO  - Init TRACKER ... SinglePointTracker (10) with detector "nose_point_3".
+2021-10-31 14:14:03,145 INFO  - Init CALCULATOR ... nose_baseline "NoseBaseLineEstimator".
+2021-10-31 14:14:03,147 INFO  - Init CALCULATOR ... nose_tipXY "TrackerConnector".
+2021-10-31 14:14:03,148 INFO  - Init CALCULATOR ... rawPupilXY_OS "DetectorConnector".
+2021-10-31 14:14:03,148 INFO  - Init CALCULATOR ... rawPupilXY_OD "DetectorConnector".
+2021-10-31 14:14:03,150 INFO  - Init CALCULATOR ... SubNose_OS "TrackerSubtractor".
+2021-10-31 14:14:03,151 INFO  - Init CALCULATOR ... SubNose_OD "TrackerSubtractor".
+2021-10-31 14:14:03,152 INFO  - Init CALCULATOR ... EyeCornerODLeft "TrackerConnector".
+2021-10-31 14:14:03,153 INFO  - Init CALCULATOR ... EyeCornerOSLeft "TrackerConnector".
+2021-10-31 14:14:03,154 INFO  - Init CALCULATOR ... SubEyeCorner_OS "TrackerSubtractor".
+2021-10-31 14:14:03,155 INFO  - Init CALCULATOR ... SubEyeCorner_OD "TrackerSubtractor".
+2021-10-31 14:14:03,156 INFO  - Init CALCULATOR ... ProjectorOS "ProjectorToBaseLine".
+2021-10-31 14:14:03,157 INFO  - Init CALCULATOR ... ProjectorOD "ProjectorToBaseLine".
+2021-10-31 14:14:03,158 INFO  - Init CALCULATOR ... Limbus_OS "EdgeDetector".
+2021-10-31 14:14:03,159 INFO  - Init CALCULATOR ... Limbus_OD "EdgeDetector".
+2021-10-31 14:14:03,160 INFO  - Init CALCULATOR ... LimbusOSfromNose "CalculatorSubtractor".
+2021-10-31 14:14:03,162 INFO  - Init CALCULATOR ... LimbusODfromNose "CalculatorSubtractor".
+2021-10-31 14:14:03,163 INFO  - Init CALCULATOR ... LimbusOSfromEyeCnr "CalculatorSubtractor".
+2021-10-31 14:14:03,164 INFO  - Init CALCULATOR ... LimbusODfromEyeCnr "CalculatorSubtractor".
+2021-10-31 14:14:03,465 INFO  - opening video  ... /Volumes/BLUR/DATA/ARANGA/VIDEO/DAY1/tneu/video.converted/result/clip-1-trial-1-1-animation/video.mp4
+2021-10-31 14:14:03,466 INFO  - opening file   ... /Volumes/BLUR/DATA/ARANGA/VIDEO/DAY1/tneu/video.converted/result/clip-1-trial-1-1-animation/results.csv
+2021-10-31 14:14:03,477 DEBUG [eye_corner_tracker_od][1][IDLE] - Intializing
+2021-10-31 14:14:03,487 DEBUG [eye_corner_tracker_od][1][IDLE] - Setting to DETECT
+2021-10-31 14:14:03,489 DEBUG [eye_corner_tracker_os][1][IDLE] - Intializing
+2021-10-31 14:14:03,490 DEBUG [eye_corner_tracker_os][1][IDLE] - Setting to DETECT
+2021-10-31 14:14:03,491 DEBUG [eye_pupil_tracker_od][1][IDLE] - Intializing
+2021-10-31 14:14:03,493 DEBUG [eye_pupil_tracker_od][1][IDLE] - Setting to DETECT
+2021-10-31 14:14:03,494 DEBUG [eye_pupil_tracker_os][1][IDLE] - Intializing
+2021-10-31 14:14:03,495 DEBUG [eye_pupil_tracker_os][1][IDLE] - Setting to DETECT
+2021-10-31 14:14:03,496 DEBUG [nose_tracker][1][IDLE] - Intializing
+2021-10-31 14:14:03,497 DEBUG [nose_tracker][1][IDLE] - Setting to DETECT
+2021-10-31 14:14:03,498 DEBUG [nose_tracker_1][1][IDLE] - Intializing
+2021-10-31 14:14:03,499 DEBUG [nose_tracker_1][1][IDLE] - Setting to DETECT
+2021-10-31 14:14:03,500 DEBUG [nose_tracker_2][1][IDLE] - Intializing
+2021-10-31 14:14:03,500 DEBUG [nose_tracker_2][1][IDLE] - Setting to DETECT
+2021-10-31 14:14:03,502 DEBUG [nose_tracker_3][1][IDLE] - Intializing
+2021-10-31 14:14:03,502 DEBUG [nose_tracker_3][1][IDLE] - Setting to DETECT
+2021-10-31 14:14:03,552 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,570 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,571 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,573 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,575 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,576 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,578 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,580 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,604 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,606 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,608 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,610 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,612 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,613 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,615 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,616 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,640 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,641 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,643 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,644 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,646 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,647 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,649 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,650 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,673 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,677 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,678 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,680 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,681 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,682 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,684 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,685 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,707 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,710 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,711 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,713 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,714 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,716 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,717 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,719 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,738 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,742 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,743 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,745 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,746 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,747 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,749 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,750 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,771 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,772 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,774 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,775 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,777 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,778 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,780 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,781 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,800 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,802 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,803 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,804 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,805 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,807 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,808 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,809 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,828 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,830 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,831 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,833 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,834 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,835 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,837 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,838 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,857 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,858 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,860 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,861 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,862 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,864 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,865 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,867 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,887 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,888 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,890 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,891 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,893 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,894 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,895 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,896 DEBUG  - No CANDIDATE detections were FOUND.
+2021-10-31 14:14:03,978 DEBUG  - Validity Check [FAILED] (Empty)
+2021-10-31 14:14:03,979 DEBUG  - Validity Check [FAILED] (Empty)
+2021-10-31 14:14:03,981 DEBUG  - Validity Check [FAILED] (Empty)
+2021-10-31 14:14:03,982 DEBUG  - Validity Check [FAILED] (Empty)
+2021-10-31 14:14:03,984 DEBUG  - Validity Check [FAILED] (Empty)
+2021-10-31 14:14:03,985 DEBUG  - Validity Check [FAILED] (Empty)
+2021-10-31 14:14:03,986 DEBUG  - Validity Check [FAILED] (Empty)
+2021-10-31 14:14:03,988 DEBUG  - Validity Check [FAILED] (Empty)
+2021-10-31 14:14:04,061 DEBUG validityCheck - Tracker Detection [FAILED]
+2021-10-31 14:14:04,063 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,063 DEBUG [eye_corner_tracker_os][1][DETECT] - [DETECT] Found valid detection 1/3
+2021-10-31 14:14:04,065 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,065 DEBUG [eye_pupil_tracker_od][1][DETECT] - [DETECT] Found valid detection 1/3
+2021-10-31 14:14:04,067 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,068 DEBUG [eye_pupil_tracker_os][1][DETECT] - [DETECT] Found valid detection 1/3
+2021-10-31 14:14:04,069 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,070 DEBUG [nose_tracker][1][DETECT] - [DETECT] Found valid detection 1/3
+2021-10-31 14:14:04,071 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,072 DEBUG [nose_tracker_1][1][DETECT] - [DETECT] Found valid detection 1/3
+2021-10-31 14:14:04,073 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,074 DEBUG [nose_tracker_2][1][DETECT] - [DETECT] Found valid detection 1/3
+2021-10-31 14:14:04,075 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,076 DEBUG [nose_tracker_3][1][DETECT] - [DETECT] Found valid detection 1/3
+2021-10-31 14:14:04,143 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,144 DEBUG [eye_corner_tracker_od][1][DETECT] - [DETECT] Found valid detection 1/3
+2021-10-31 14:14:04,145 DEBUG validityCheck - Tracker Detection [FAILED]
+2021-10-31 14:14:04,146 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,147 DEBUG [eye_pupil_tracker_od][1][DETECT] - [DETECT] Found valid detection 2/3
+2021-10-31 14:14:04,148 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,149 DEBUG [eye_pupil_tracker_os][1][DETECT] - [DETECT] Found valid detection 2/3
+2021-10-31 14:14:04,151 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,151 DEBUG [nose_tracker][1][DETECT] - [DETECT] Found valid detection 2/3
+2021-10-31 14:14:04,153 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,153 DEBUG [nose_tracker_1][1][DETECT] - [DETECT] Found valid detection 2/3
+2021-10-31 14:14:04,154 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,155 DEBUG [nose_tracker_2][1][DETECT] - [DETECT] Found valid detection 2/3
+2021-10-31 14:14:04,157 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,157 DEBUG [nose_tracker_3][1][DETECT] - [DETECT] Found valid detection 2/3
+2021-10-31 14:14:04,227 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,228 DEBUG [eye_corner_tracker_od][1][DETECT] - [DETECT] Found valid detection 2/3
+2021-10-31 14:14:04,229 DEBUG validityCheck - Tracker Detection [FAILED]
+2021-10-31 14:14:04,231 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,231 DEBUG [eye_pupil_tracker_od][1][DETECT] - [DETECT] Found valid detection 3/3
+2021-10-31 14:14:04,233 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,234 DEBUG [eye_pupil_tracker_os][1][DETECT] - [DETECT] Found valid detection 3/3
+2021-10-31 14:14:04,235 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,236 DEBUG [nose_tracker][1][DETECT] - [DETECT] Found valid detection 3/3
+2021-10-31 14:14:04,237 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,238 DEBUG [nose_tracker_1][1][DETECT] - [DETECT] Found valid detection 3/3
+2021-10-31 14:14:04,239 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,240 DEBUG [nose_tracker_2][1][DETECT] - [DETECT] Found valid detection 3/3
+2021-10-31 14:14:04,241 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,242 DEBUG [nose_tracker_3][1][DETECT] - [DETECT] Found valid detection 3/3
+2021-10-31 14:14:04,312 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,313 DEBUG [eye_corner_tracker_od][1][DETECT] - [DETECT] Found valid detection 3/3
+2021-10-31 14:14:04,315 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,316 DEBUG [eye_corner_tracker_os][1][DETECT] - [DETECT] Found valid detection 1/3
+2021-10-31 14:14:04,317 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,318 DEBUG [eye_pupil_tracker_od][1][DETECT] - POINT 5. (298.13, 297.22) blockSize = [65, 65]
+2021-10-31 14:14:04,320 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,321 DEBUG [eye_pupil_tracker_os][1][DETECT] - POINT 5. (524.54, 291.20) blockSize = [65, 65]
+2021-10-31 14:14:04,322 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,323 DEBUG [nose_tracker][1][DETECT] - POINT 5. (392.50, 478.90) blockSize = [95, 95]
+2021-10-31 14:14:04,325 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,326 DEBUG [nose_tracker_1][1][DETECT] - POINT 5. (341.90, 466.20) blockSize = [91, 91]
+2021-10-31 14:14:04,327 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,328 DEBUG [nose_tracker_2][1][DETECT] - POINT 5. (392.50, 478.90) blockSize = [91, 91]
+2021-10-31 14:14:04,330 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,331 DEBUG [nose_tracker_3][1][DETECT] - POINT 5. (414.70, 471.40) blockSize = [91, 91]
+2021-10-31 14:14:04,412 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,413 DEBUG [eye_corner_tracker_od][1][DETECT] - POINT 6. (239.80, 314.50) blockSize = [21, 21]
+2021-10-31 14:14:04,414 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,415 DEBUG [eye_corner_tracker_os][1][DETECT] - [DETECT] Found valid detection 2/3
+2021-10-31 14:14:04,419 DEBUG [eye_pupil_tracker_od][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:04,424 DEBUG [eye_pupil_tracker_os][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:04,429 DEBUG [nose_tracker][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:04,434 DEBUG [nose_tracker_1][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:04,439 DEBUG [nose_tracker_2][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:04,445 DEBUG [nose_tracker_3][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:04,536 DEBUG [eye_corner_tracker_od][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:04,537 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,538 DEBUG [eye_corner_tracker_os][1][DETECT] - [DETECT] Found valid detection 3/3
+2021-10-31 14:14:04,542 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (298.685,297.372)
+2021-10-31 14:14:04,546 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (525.071,291.448)
+2021-10-31 14:14:04,550 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (393.219,479.191)
+2021-10-31 14:14:04,555 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (342.540,466.452)
+2021-10-31 14:14:04,561 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (393.218,479.194)
+2021-10-31 14:14:04,567 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (415.444,471.677)
+2021-10-31 14:14:04,659 DEBUG [eye_corner_tracker_od][1][KLT_TRACK] - Lost TRACKING
+2021-10-31 14:14:04,661 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,661 DEBUG [eye_corner_tracker_os][1][DETECT] - POINT 8. (475.70, 301.00) blockSize = [21, 21]
+2021-10-31 14:14:04,665 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (299.215,297.594)
+2021-10-31 14:14:04,668 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (525.521,291.685)
+2021-10-31 14:14:04,672 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (393.490,479.360)
+2021-10-31 14:14:04,675 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (342.773,466.627)
+2021-10-31 14:14:04,679 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (393.497,479.363)
+2021-10-31 14:14:04,682 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (415.715,471.844)
+2021-10-31 14:14:04,751 DEBUG [eye_corner_tracker_od][1][KLT_LOST] - Ending TRACKING
+2021-10-31 14:14:04,752 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:04,752 DEBUG [eye_corner_tracker_od][1][DETECT] - POINT 7. (240.60, 313.30) blockSize = [21, 21]
+2021-10-31 14:14:04,756 DEBUG [eye_corner_tracker_os][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:04,760 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (299.452,297.691)
+2021-10-31 14:14:04,763 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (525.771,291.951)
+2021-10-31 14:14:04,767 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (393.847,479.527)
+2021-10-31 14:14:04,770 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (343.209,466.841)
+2021-10-31 14:14:04,774 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (393.845,479.531)
+2021-10-31 14:14:04,777 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (416.097,472.072)
+2021-10-31 14:14:04,859 DEBUG [eye_corner_tracker_od][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:04,862 DEBUG [eye_corner_tracker_os][1][KLT_TRACK] - Updating ... (476.180,300.914)
+2021-10-31 14:14:04,866 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (299.782,297.742)
+2021-10-31 14:14:04,869 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (526.080,292.148)
+2021-10-31 14:14:04,873 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (394.250,479.507)
+2021-10-31 14:14:04,876 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (343.488,466.784)
+2021-10-31 14:14:04,880 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (394.263,479.508)
+2021-10-31 14:14:04,883 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (416.501,472.041)
+2021-10-31 14:14:04,981 DEBUG [eye_corner_tracker_od][1][KLT_TRACK] - Lost TRACKING
+2021-10-31 14:14:04,996 DEBUG [eye_corner_tracker_os][1][KLT_TRACK] - Updating ... (476.500,300.964)
+2021-10-31 14:14:04,999 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (300.293,297.734)
+2021-10-31 14:14:05,002 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (526.526,292.161)
+2021-10-31 14:14:05,006 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (394.693,479.472)
+2021-10-31 14:14:05,030 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (344.012,466.737)
+2021-10-31 14:14:05,056 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (394.709,479.475)
+2021-10-31 14:14:05,117 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (416.927,472.020)
+2021-10-31 14:14:05,204 DEBUG [eye_corner_tracker_od][1][KLT_LOST] - Ending TRACKING
+2021-10-31 14:14:05,205 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:05,206 DEBUG [eye_corner_tracker_od][1][DETECT] - POINT 8. (241.20, 315.70) blockSize = [21, 21]
+2021-10-31 14:14:05,209 DEBUG [eye_corner_tracker_os][1][KLT_TRACK] - Updating ... (476.895,300.944)
+2021-10-31 14:14:05,212 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (300.457,297.697)
+2021-10-31 14:14:05,215 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (526.780,292.171)
+2021-10-31 14:14:05,219 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (394.786,479.482)
+2021-10-31 14:14:05,222 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (344.091,466.704)
+2021-10-31 14:14:05,225 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (394.805,479.482)
+2021-10-31 14:14:05,229 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (416.989,472.036)
+2021-10-31 14:14:05,311 DEBUG [eye_corner_tracker_od][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:05,314 DEBUG [eye_corner_tracker_os][1][KLT_TRACK] - Updating ... (477.222,300.993)
+2021-10-31 14:14:05,317 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (300.784,297.507)
+2021-10-31 14:14:05,321 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (527.104,292.151)
+2021-10-31 14:14:05,324 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (395.014,479.426)
+2021-10-31 14:14:05,328 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (344.264,466.586)
+2021-10-31 14:14:05,331 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (395.024,479.427)
+2021-10-31 14:14:05,334 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (417.322,472.001)
+2021-10-31 14:14:05,425 DEBUG [eye_corner_tracker_od][1][KLT_TRACK] - Lost TRACKING
+2021-10-31 14:14:05,428 DEBUG [eye_corner_tracker_os][1][KLT_TRACK] - Updating ... (477.498,300.898)
+2021-10-31 14:14:05,432 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (301.164,297.631)
+2021-10-31 14:14:05,435 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (527.374,292.185)
+2021-10-31 14:14:05,438 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (395.253,479.447)
+2021-10-31 14:14:05,441 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (344.515,466.578)
+2021-10-31 14:14:05,444 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (395.265,479.448)
+2021-10-31 14:14:05,448 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (417.533,472.016)
+2021-10-31 14:14:05,528 DEBUG [eye_corner_tracker_od][1][KLT_LOST] - Ending TRACKING
+2021-10-31 14:14:05,529 DEBUG validityCheck - Tracker Detection [PASSED]
+2021-10-31 14:14:05,530 DEBUG [eye_corner_tracker_od][1][DETECT] - POINT 9. (239.80, 314.30) blockSize = [21, 21]
+2021-10-31 14:14:05,533 DEBUG [eye_corner_tracker_os][1][KLT_TRACK] - Updating ... (477.853,300.929)
+2021-10-31 14:14:05,536 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (301.514,297.328)
+2021-10-31 14:14:05,540 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (527.809,292.395)
+2021-10-31 14:14:05,543 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (395.494,479.401)
+2021-10-31 14:14:05,547 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (344.830,466.514)
+2021-10-31 14:14:05,550 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (395.500,479.404)
+2021-10-31 14:14:05,554 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (417.809,471.974)
+2021-10-31 14:14:05,640 DEBUG [eye_corner_tracker_od][1][KLT_INITIALIZE] - Initialize TRACKING
+2021-10-31 14:14:05,643 DEBUG [eye_corner_tracker_os][1][KLT_TRACK] - Updating ... (478.377,301.204)
+2021-10-31 14:14:05,646 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (302.036,297.342)
+2021-10-31 14:14:05,650 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (528.395,292.403)
+2021-10-31 14:14:05,653 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (395.893,479.367)
+2021-10-31 14:14:05,657 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (345.185,466.465)
+2021-10-31 14:14:05,660 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (395.899,479.366)
+2021-10-31 14:14:05,663 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (418.268,471.945)
+2021-10-31 14:14:05,753 DEBUG [eye_corner_tracker_od][1][KLT_TRACK] - Lost TRACKING
+2021-10-31 14:14:05,756 DEBUG [eye_corner_tracker_os][1][KLT_TRACK] - Updating ... (478.839,301.195)
+2021-10-31 14:14:05,760 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (302.723,297.347)
+2021-10-31 14:14:05,763 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (528.810,292.432)
+2021-10-31 14:14:05,766 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (396.487,479.311)
+2021-10-31 14:14:05,770 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (346.013,466.410)
+2021-10-31 14:14:05,773 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (396.495,479.308)
+2021-10-31 14:14:05,776 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (418.719,471.887)
+2021-10-31 14:14:05,853 DEBUG [eye_corner_tracker_od][1][KLT_LOST] - Ending TRACKING
+2021-10-31 14:14:05,854 DEBUG validityCheck - Tracker Detection [FAILED]
+2021-10-31 14:14:05,857 DEBUG [eye_corner_tracker_os][1][KLT_TRACK] - Updating ... (479.378,301.196)
+2021-10-31 14:14:05,860 DEBUG [eye_pupil_tracker_od][1][KLT_TRACK] - Updating ... (303.409,297.344)
+2021-10-31 14:14:05,864 DEBUG [eye_pupil_tracker_os][1][KLT_TRACK] - Updating ... (529.574,292.639)
+2021-10-31 14:14:05,867 DEBUG [nose_tracker][1][KLT_TRACK] - Updating ... (396.800,479.370)
+2021-10-31 14:14:05,871 DEBUG [nose_tracker_1][1][KLT_TRACK] - Updating ... (346.401,466.498)
+2021-10-31 14:14:05,874 DEBUG [nose_tracker_2][1][KLT_TRACK] - Updating ... (396.812,479.368)
+2021-10-31 14:14:05,878 DEBUG [nose_tracker_3][1][KLT_TRACK] - Updating ... (419.021,471.953)

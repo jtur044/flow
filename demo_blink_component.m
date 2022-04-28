@@ -53,9 +53,7 @@ for k = 1:M
     %% show detected start of blinks 
     [t0, V0, maxtab] = detectblinkv (t, Vx, fps, 'blink_duration', blink_duration);
     plot (t0, V0, 'rx');
-    
-    
-    
+
 end    
 
 xlabel ('Time (seconds)');

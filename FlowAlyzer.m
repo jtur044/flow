@@ -13,8 +13,8 @@ classdef FlowAlyzer < FlowEstimator & handle
         regionIndex = 0;
         outputIndex = 0;
         
-        keys = [];      
-        OutputKeys = [];
+        keys        = [];      
+        OutputKeys  = [];
         
         CurrentTime;        
         outputDataFile;
@@ -25,6 +25,7 @@ classdef FlowAlyzer < FlowEstimator & handle
         % lastIm = [];
         
         postFn;
+        preFn;
         
         fid;
     end
@@ -80,14 +81,15 @@ classdef FlowAlyzer < FlowEstimator & handle
             M = length(obj.keys);
             for k = 1:M                 
                
-               eachRegion = obj.keys{k};
-               update(obj.Region(eachRegion));                
-
-               
-                %% Information 
-               if (~isempty(obj.postFn))              
-                   obj.postFn (obj.Region(eachRegion));
+               %% Information                 
+               isvalid = true;
+               eachRegion = obj.keys{k};               
+               if (~isempty(obj.preFn))              
+                   isvalid = obj.preFn (obj.Region(eachRegion));
                end
+
+               update(obj.Region(eachRegion), isvalid);                
+               
 
             end
             
@@ -100,11 +102,10 @@ classdef FlowAlyzer < FlowEstimator & handle
                 allRegions = obj.Region;
                 update(obj.Output(eachOutput), allRegions, CurrentTime);                  
 
-    
-                %% Information 
-                if (~isempty(obj.postFn))
-                    obj.postFn (obj.Output(eachOutput));
-                end
+                %%% Information 
+                %if (~isempty(obj.postFn))
+                %    obj.postFn (obj.Output(eachOutput));
+                %end
                 
                 %ret = getFD(obj.Output(eachOutput));                
             end
@@ -161,12 +162,13 @@ classdef FlowAlyzer < FlowEstimator & handle
 
 
                 %% Get the Output 
-                eachOutput      = obj.Output (OutputKeys{k});
-                eachRecord      = eachOutput.get();
-                eachRegion      = obj.Region(eachRecord.selectROI);
-                eachRecord.row  = eachRegion.row;
-                eachRecord.col  = eachRegion.col;
-
+                eachOutput        = obj.Output (OutputKeys{k});
+                eachRecord        = eachOutput.get();
+                eachRegion        = obj.Region(eachRecord.selectROI);
+                eachRecord.row    = eachRegion.row;
+                eachRecord.col    = eachRegion.col;
+                eachRecord.active = eachRegion.active;
+                
                 eachRecord = struct2table (eachRecord);
 
                 %eachRecord

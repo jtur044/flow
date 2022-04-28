@@ -77,14 +77,18 @@ classdef FlowRegion < handle
         end
         
         
-        function update(obj)
-                    
+        function update(obj, varargin)
+                   
+                        
             if (isempty(obj.master))
                 rlog('debug',[],'"%s" master is EMPTY\n', obj.config.name);
                 return
             end   
             
-            %fprintf ('Generating sub-region.\n');
+            %% add active information flag 
+            if  (nargin == 2)            
+                obj.active = varargin{1};                
+            end
             
             
             %% create a sub-region of the main FlowData            
